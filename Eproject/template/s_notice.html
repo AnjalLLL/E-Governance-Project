@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Schlorship Notices Form Government</h2>
+<div class="Notices" style="display:flex; flex-direction:row; width=100%;">
+    <div style='width:50%%' >
+    <table border="1" style='width:100%;' >
+        <tr>
+            <th>Date</th>
+            <th>Topics</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td> {{ row.column1 }} </td>
+            <td><a href="#" onclick="loadIframe('{{ row.column3 }}'); return false;" target="iframeContainer">{{ row.column2}}</a></td>
+            
+        </tr>
+        {% endfor %} 
+    </table>
+    </div>
+    <div style='width:50%;'> <iframe id="iframe" name="iframeContainer" width="100%;" height="600px" ></iframe> </div>
+</div>
+<script>
+    function loadIframe(url) {
+        document.getElementById('iframe').src = url;
+    }
+</script>
+
+{% endblock %}

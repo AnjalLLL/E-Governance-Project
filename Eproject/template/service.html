@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Our Services</h2>
+
+<div class="flex-container">
+    <div><a href="{% url 's_notice' %}"><p>Government Schlorship Notices</P></a></div>
+    <div><a href="{% url 'tu_notice' %}"><p>TU Notices</p></a></div>
+    <div><a href="{% url 'home' %}"><p>Useful Links</p></a></div>
+  </div>
+{% endblock %}
